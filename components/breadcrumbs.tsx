@@ -16,7 +16,7 @@ const BreadCrumbs = () => {
     const title = segments[0]
     return (
       <div>
-        <Link href={'/'} className='text-sm text-blue1 after:content-[">"] after:px-2 after:text-fg4 after:text-xs'>Home</Link>
+        <Link href={'/'} className='text-sm text-blue1 hover:text-orange2 after:content-[">"] after:px-2 after:text-fg4 after:text-xs'>Home</Link>
         <span className='text-sm text-fg4 capitalize'>{title}</span>
       </div>
     )
@@ -26,8 +26,16 @@ const BreadCrumbs = () => {
     if (segments[0] === 'posts' && !!post) {
       return (
         <div className="overflow-hidden text-ellipsis">
-          <Link href={'/'} className='text-sm text-blue1 after:content-[">"] after:px-2 after:text-fg4 after:text-xs'>Home</Link>
+          <Link href={'/'} className='text-sm text-blue1 hover:text-orange2 after:content-[">"] after:px-2 after:text-fg4 after:text-xs'>Home</Link>
           <span className='text-sm text-fg4 whitespace-nowrap capitalize'>{post.title}</span>
+        </div>
+      )
+    } else if (segments[0] === 'tags') {
+      return (
+        <div className="overflow-hidden text-ellipsis">
+          <Link href={'/'} className='text-sm text-blue1 hover:text-orange2 after:content-[">"] after:px-2 after:text-fg4 after:text-xs'>Home</Link>
+          <Link href={`/tags`} className='text-sm text-blue1 hover:text-orange2 after:content-[">"] after:px-2 after:text-fg4 after:text-xs'>Tags</Link>
+          <span className='text-sm text-fg4 whitespace-nowrap'>{segments[1]}</span>
         </div>
       )
     } else {
