@@ -4,7 +4,7 @@ import { useSelectedLayoutSegments } from "next/navigation"
 import { allPosts } from 'contentlayer/generated'
 
 const BreadCrumbs = () => {
-  const segments = useSelectedLayoutSegments()
+  const segments = useSelectedLayoutSegments().filter(segment => !segment.startsWith('('))
 
   if (segments.length === 0) {
     return (

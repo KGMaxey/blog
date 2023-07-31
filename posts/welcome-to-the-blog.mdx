@@ -1,0 +1,90 @@
+---
+title: 'Welcome To The Blog!'
+date: 07/30/2023
+description: "Wait I have a blog now? Guess I might as well explain why! We'll also dig into some of the features, how it was built, and what to look forward to next. This post will cover building the basics of how I built my personal blog including: NextJS, Content Layer MDX, Tailwind and more. "
+tags: 
+    - 'blog'
+    - 'homelab'
+    - 'nextjs'
+    - 'mdx'
+    - 'contentlayer'
+    - 'web-development'
+---
+
+# Credit Where Credit Is Due
+
+Given my fairly poor skills in graphical design, it seems like a bit of a strange choice for me to build my own bespoke website. However, that is all a matter of perspective. A lack of skill is an opportunity for growth. I've spent most of my professional career in a full stack role for either web or mobile apps. In that time I've almost always had a design, a framework chosen for me, and a team of more talented front end specific developers to lean on. This meant that much of my time was in integration and in the data layer. I've never built a rich website from scratch on my own, styling and all.
+
+So that's what led me here, making my this website instead of using something like [Jekyll](https://jekyllrb.com/), [Gatsby](https://www.gatsbyjs.com/), or [Hugo](https://gohugo.io/).
+
+**BUT** that does leave me with a problem, what the heck am I *actually* going to build?
+
+## Copy Cat Sources
+
+**Enter** - the [Chirpy theme](https://github.com/cotes2020/jekyll-theme-chirpy/tree/e8ef69ad1784661c5bb06dbcf530cfa37af63383) for Jekyll. Or more specifically, the implementation from [TechnoTim](https://technotim.live/) on his website/ personal blog.
+
+This is a GREAT theme! I was particularly fond of its use of a vertical sidebar navigation mirrored by a functional right sidebar to provide context and features throughout the site. I wanted to use this concept and some of its features and layouts as a base for my website. I've changed the color scheme and made some slightly different decisions in feature behavior, but to be blunt, it's pretty damn similar. So make sure to check out both [Chirpy theme](https://github.com/cotes2020/jekyll-theme-chirpy/tree/e8ef69ad1784661c5bb06dbcf530cfa37af63383) and [TechnoTim](https://technotim.live/) and show them some love!
+
+
+# The Foundation
+
+## Libraries
+
+This blog is built using several open source frameworks and libraries.
+
+ - [NextJS](https://nextjs.org/) - the main React framework and SSR and hosting
+ - [MDX](https://mdxjs.com/) - writing blog posts in a Markdown file that can also use React Components
+ - [ContentLayer](https://www.contentlayer.dev/) - ingesting and processing the MDX, and providing access to the posts through React
+ - [Remark](https://github.com/remarkjs/remark) - markdown transformation plugins
+ - [Rehype](https://github.com/rehypejs/rehype) - HTML transformation plugins
+ - [TailwindCSS](https://tailwindcss.com/) - theming and the overall CSS framework
+ - [Code Hike](https://codehike.org/docs/themes) - the Markdown code blocks
+
+## Theme
+
+I am a developer at heart. Which means I'm a total sucker for color themes. My current personal favorite is a dark Gruvbox theme. In the spirit of just starting somewhere, it's the color scheme I chose for this site and then I just sort of stuck with it. The dark theme looks really good, the light theme looks nice but is a litttttle less accessibility friendly. Eventually, this will probably change, but for now, it's what we have.
+
+- [GruvBox Theme Example](https://github.com/jdinhify/vscode-theme-gruvbox)
+
+## Some Assembly Required
+
+Something I did not anticipate the scale of, was *just how much* DIY there would be. All of the above libraries do an amazing job of working together but there's still only so much they can do. The most prolific example of this is the actual implementation of the markdown pages.
+
+<CH.Section>
+Once you get MDX pages processed through ContentLayer, transformed by remark and rehype, and injected into NextJS, it still only renders simple basic HTML elements like _`div`_, _`p`_, _`ul`_, _`code`_, etc... The styling, formatting, headers, footers, and more are all up to you.
+</CH.Section>
+
+# Features
+
+There are a ton of subtle features that added up to a significant amount of increased work. Some of which I finished......some of which I have not.
+
+## Implemented
+
+- Persistent side nav bar
+- Persistent header
+- Site breadcrumbs with links
+- Responsive styling - specifically mobile
+- Centered page layout - OCD is B!&$h
+- Home, About, & Tags, pages
+- Light & Dark mode
+- Post Table of Contents with links and smooth scrolling
+- Scroll to top
+- Trending tags
+- Recent posts
+- Themed code blocks with copy
+- Site wide transition animations - position, color, etc...
+- Backend-less website - all features should be static site based
+
+## Not Implemented...yet
+
+- Actual search functionality - it literally does nothing at the moment
+- Zoomable post images
+- Any search engine optimization
+- Social links
+- Next/ Prev post navigation
+- Github social post comments
+- Light & Dark mode persistence that doesn't suck
+- Built in kanban board for homelab
+- So so so much more
+
+There's still tons of work to be done, but for now, I'm quite proud of where the site stands right now. Not too bad for a few weekend's worth of work!

@@ -33,14 +33,14 @@ const SideBar = () => {
           }
         </ul>
       </div>
-      <div className='block border-l border-fg4 pl-4 my-8 sticky top-8'>
+      <div className='block border-l border-fg4 pl-4 my-8'>
         <div className="text-fg font-medium opacity-90">Trending Tags</div>
         <div className="flex flex-wrap pl-2 py-1">
           {
             Object.keys(tagMap).sort((a, b) => tagMap[b] - tagMap[a]).map(tag => {
               return (
                 <div key={tag} className="border border-fg4 px-1 m-1 opacity-80 hover:opacity-100 hover:bg-blue1 hover:text-bg hover:underline hover:border-blue2">
-                  <Link href={'/'} className="text-sm whitespace-nowrap">{tag}</Link>
+                  <Link href={`/tags/${tag}`} className="text-sm whitespace-nowrap">{tag}</Link>
                 </div>
               )
             })

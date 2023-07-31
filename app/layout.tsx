@@ -1,6 +1,7 @@
 'use client'
 
 import NavBar from '@/components/navbar'
+import "@code-hike/mdx/dist/index.css"
 import './globals.css'
 import { Noto_Sans_Mono } from 'next/font/google'
 import TopBar from '@/components/topbar'
@@ -38,7 +39,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className={`dark overflow-x-clip ${noto.className}`}>
+    <html lang="en" className={`dark tracking-tighter scroll-smooth overflow-x-clip ${noto.className}`}>
       <body className='bg-bg0_s overflow-x-clip'>
         <NavBar mobileNavShown={mobileNavShown} onNavChange={() => {
           if (mobileNavShown) setMobileNavShown(false)
@@ -47,13 +48,26 @@ export default function RootLayout({
           <div className={`absolute w-screen h-screen z-40 md:hidden bg-transparent ${!mobileNavShown ? 'hidden' : ''}`} onClick={() => {
             if (mobileNavShown) setMobileNavShown(false)
           }} />
-          <div className='mx-auto max-w-screen-xl px-6 text-fg'>
+          <div className='mx-auto md:max-w-[85%] px-6 text-fg'>
             <TopBar handleMobileClick={() => setMobileNavShown(!mobileNavShown)} />
             {children}
+            <footer className='text-xs text-fg4 mt-10 py-8 md:mr-[--sidebar] xl:mr-[--sidebar-xl] border-t border-fg4'>
+              <div className='flex flex-wrap justify-center items-center'>
+                <p className='text-center opacity-80'>
+                  {'See something wrong? Want to contribute? '}
+                  <a href='https://github.com/kgmaxey' className='text-fg hover:text-blue1 hover:underline'>Edit this page</a>
+                </p>
+                <p className='text-center opacity-80 before:md:content-["-"] before:md:mx-2'>
+                  <a href='' className='text-fg hover:text-blue1 hover:underline'>© {new Date().getFullYear()}</a>
+                  {' '}
+                  <a href='' className='text-fg hover:text-blue1 hover:underline'>KGMaxey</a>
+                  {' '}
+                  Some rights reserved.
+                </p>
+              </div>
+            </footer>
           </div>
         </div>
-        <footer className='bg-red1 h-16'>
-        </footer>
         <button onClick={scrollTop} className={`${scrollButtonShown ? 'opacity-100' : 'opacity-0'} transition-all duration-300 fixed w-12 h-12 bottom-8 hover:bottom-9 right-8 2xl:right-[calc((100vw-var(--sidebar-xl)-1280px)/2+2rem)] bg-bg border border-bg4 rounded-full shadow-lg`}>
           <FontAwesomeIcon icon={faAngleUp} size='lg' className='text-fg' />
         </button>

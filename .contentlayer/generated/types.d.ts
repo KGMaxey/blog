@@ -23,6 +23,7 @@ export type Post = {
   /** MDX file body */
   body: MDX
   url: string
+  headings: list
 }  
 
 /** Nested types */
