@@ -2,8 +2,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import rehypeSlug from 'rehype-slug'
 import GithubSlugger from 'github-slugger'
 import { remarkCodeHike } from '@code-hike/mdx';
-import { GruvboxDark, GruvboxLight } from './code-hike-gruvbox';
-import rehypePrettyCode from 'rehype-pretty-code';
+import { GruvboxDark } from './code-hike-gruvbox';
 
 const Post = defineDocumentType(() => ({
   name: 'Post',

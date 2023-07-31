@@ -24,7 +24,7 @@ const TagPage = ({ params }: { params: {tag: string } }) => {
         {
           posts.map(post => (
             <li key={post._id} className="flex justify-content items-center mb-2 before:content-[''] before:bg-fg4 before:rounded-lg before:w-1 before:h-1 before:mx-1">
-              <Link href={post.url} className="text-base text-blue1 hover:text-blue2 hover:underline">{post.title}</Link>
+              <Link href={post.url} className="text-base text-blue1 hover:text-orange2 hover:underline">{post.title}</Link>
               <span className="border-dotted border-b-2 mx-2 grow" />
               <div className='text-sm text-center whitespace-nowrap text-fg4'>{format(parseISO(post.date), 'LLLL d, yyyy')}</div>
             </li>
