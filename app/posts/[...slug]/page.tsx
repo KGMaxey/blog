@@ -37,7 +37,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
             <h1 className='mb-4'>{post.title}</h1>
             <p className='text-fg3 font-light mt-2 mb-8 italic'>{post.description}</p>
             <div className="flex flex-wrap items-center my-2">
-              <FontAwesomeIcon icon={faTag} size='sm' className='text-fg mr-2 opacity-60' />
+              <FontAwesomeIcon icon={faTag} size='sm' className='text-fg pb-2 mr-2 opacity-60' />
               {
                 post.tags?.map(tag => (
                   <div key={tag} className="border border-fg4 px-1 mb-2 mr-2 text-sm hover:bg-blue1 hover:text-bg hover:underline hover:border-blue2">
